@@ -1,5 +1,8 @@
 package one.digitalinoovation.personapidio.service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,6 +31,16 @@ public class PersonService {
 				.builder()
 				.message("Created person with ID" + savedPerson.getId())
 				.build();
+	}
+
+
+	public List<PersonDTO> listAll() {
+		
+		List<Person> allPeople = personRepository.findAll();
+		
+		return allPeople.stream()
+				.map(personMapper::toDTO)
+				.collect(Collectors.toList());
 	}
 	
 	// Metodo que faz "manualmente" a conversão de um objeto do tipo PersonDTO para Person
