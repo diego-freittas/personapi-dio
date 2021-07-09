@@ -1,6 +1,6 @@
 <h2>Projeto desenvolvido durante o bootcamp Java Developes da Digital Innovation One</h2>
 
-<h1>Desenvolvendo um sistema de gerenciamento de pessoas em API REST com Spring Boot</h1>
+<h3>Desenvolvendo um sistema de gerenciamento de pessoas em API REST com Spring Boot</h3>
 
 
 Durante a sessão, foram desenvolvidos e abordados os seguintes tópicos:
