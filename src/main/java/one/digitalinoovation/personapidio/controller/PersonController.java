@@ -26,7 +26,6 @@ public class PersonController {
 	@Autowired
 	private PersonService personService;
 	
-	
 	@PostMapping 
 	@ResponseStatus(HttpStatus.CREATED)
 	//@RequestBody informa que o objeto person vai ser passado via requisicao

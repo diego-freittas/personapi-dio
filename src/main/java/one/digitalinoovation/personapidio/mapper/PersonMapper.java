@@ -15,8 +15,7 @@ public interface PersonMapper {
 	//toModel e toDTO são convensões do MapStruct
 	
 	@Mapping(target = "birthDate", source = "birthDate", dateFormat = "dd-MM-yyyy")
-	Person toModel(PersonDTO personDTO);
-	
+	Person toModel(PersonDTO personDTO);	
 	PersonDTO toDTO(Person person);
-
+	
 }
