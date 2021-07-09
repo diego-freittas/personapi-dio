@@ -1,5 +1,4 @@
-package one.digitalinoovation.personapidio.services;
-
+package one.digitalinoovation.personapidio.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,8 +8,7 @@ import one.digitalinoovation.personapidio.dto.response.MessageResponseDTO;
 import one.digitalinoovation.personapidio.entity.Person;
 import one.digitalinoovation.personapidio.repository.PersonRepository;
 
-@Service 
-// O Spring vai gerenciar um servico
+@Service
 public class PersonService {
 
 	@Autowired
@@ -30,5 +28,4 @@ public class PersonService {
 				.message("Created person with ID" + savedPerson.getId())
 				.build();
 	}
-	
 }

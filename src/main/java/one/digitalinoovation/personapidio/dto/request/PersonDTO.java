@@ -3,6 +3,7 @@ package one.digitalinoovation.personapidio.dto.request;
 import java.time.LocalDate;
 import java.util.List;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 

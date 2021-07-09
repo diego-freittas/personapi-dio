@@ -4,7 +4,6 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,9 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import one.digitalinoovation.personapidio.dto.request.PersonDTO;
 import one.digitalinoovation.personapidio.dto.response.MessageResponseDTO;
-import one.digitalinoovation.personapidio.entity.Person;
-import one.digitalinoovation.personapidio.repository.PersonRepository;
-import one.digitalinoovation.personapidio.services.PersonService;
+import one.digitalinoovation.personapidio.service.PersonService;
 
 @RestController // Controler acessado via API REST
 @RequestMapping("/api/v1/people") // caminho de acesso da APi
