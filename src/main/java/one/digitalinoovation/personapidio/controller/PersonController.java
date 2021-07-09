@@ -1,17 +1,46 @@
 package one.digitalinoovation.personapidio.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+
+import one.digitalinoovation.personapidio.dto.response.MessageResponseDTO;
+import one.digitalinoovation.personapidio.entity.Person;
+import one.digitalinoovation.personapidio.repository.PersonRepository;
+import one.digitalinoovation.personapidio.service.PersonService;
 
 @RestController // Controler acessado via API REST
 @RequestMapping("/api/v1/people") // caminho de acesso da APi
 public class PersonController {
 
+	@Autowired
+	private PersonService personService;
 	
-	@GetMapping // Operação http do tipo GET
-	public String getBook() {
-		return "PersonController diz --> Hello World!!! ";
+	
+	@PostMapping 
+	@ResponseStatus(HttpStatus.CREATED)
+	//@RequestBody informa que o objeto person vai ser passado via requisicao
+	public MessageResponseDTO createPerson(@RequestBody Person person) {
+		return personService.createPerson(person);
 	}
+	
+	
+	
+//	{
+//	    "firstName": "Diego",
+//	    "lastName" : "Freitas", 
+//	    "cpf": "808.808.808-00",
+//	    "phones" : [
+//	        {
+//	            "type":"MOBILE",
+//	            "number":"71 99999-9999" 
+//	    }
+//	    ]
+//	}
 	
 }
