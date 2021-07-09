@@ -25,11 +25,8 @@ public class PersonService {
 	
 	public MessageResponseDTO createPerson(PersonDTO personDTO) {
 		Person personToSave = personMapper.toModel(personDTO); // Convertendo o PersonDTO em uma Entity
-		Person savedPerson = personRepository.save(personToSave);
-		return MessageResponseDTO
-				.builder()
-				.message("Created person with ID" + savedPerson.getId())
-				.build();
+		return createMessageResponse(personRepository.save(personToSave), "Save person ID = ");
+	
 	}
 
 	public List<PersonDTO> listAll() {
@@ -52,9 +49,22 @@ public class PersonService {
 		
 	}
 	
+	public MessageResponseDTO updateById(Long id, PersonDTO personDTO) throws PersonNotFoundExeption {
+		verifyIfExists(id);
+		Person personToUpdate = personMapper.toModel(personDTO); // Convertendo o PersonDTO em uma Entity
+		return createMessageResponse(personRepository.save(personToUpdate), "Update person ID = ");
+	}
+	
 	private Person verifyIfExists(Long id) throws PersonNotFoundExeption {
 		return personRepository.findById(id)
 				.orElseThrow(() -> new PersonNotFoundExeption(id));
+	}
+
+	private MessageResponseDTO createMessageResponse(Person savedPerson, String message) {
+		return MessageResponseDTO
+				.builder()
+				.message(message + savedPerson.getId())
+				.build();
 	}
 	
 //	public PersonDTO findById(Long id) throws PersonNotFoundExeption {
