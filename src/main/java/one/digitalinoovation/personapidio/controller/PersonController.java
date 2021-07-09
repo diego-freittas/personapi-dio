@@ -34,7 +34,7 @@ public class PersonController {
 //	{
 //	    "firstName": "Diego",
 //	    "lastName" : "Freitas", 
-//	    "cpf": "808.808.808-00",
+//	    "cpf": "369.333.878-79",
 //	    "phones" : [
 //	        {
 //	            "type":"MOBILE",
