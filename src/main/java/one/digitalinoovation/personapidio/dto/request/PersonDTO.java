@@ -37,6 +37,4 @@ public class PersonDTO {
 	@Valid // Validacao de cada elemento da lista
 	@NotEmpty
 	private List<PhoneDTO> phones;
-	
-	
 }
